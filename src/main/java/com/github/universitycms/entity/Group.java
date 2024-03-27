@@ -20,7 +20,7 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "faculty_name", nullable = false)
+    @Column(name = "group_name", nullable = false)
     private String groupName;
 
     @OneToMany(mappedBy = "group")
@@ -32,7 +32,7 @@ public class Group {
     private Department department;
 
     @ManyToMany
-    @JoinTable(name = "groups_lesson",
+    @JoinTable(name = "groups_lessons",
             joinColumns = @JoinColumn(name = "group_id"),
     inverseJoinColumns = @JoinColumn(name = "course_id"))
     @ToString.Exclude
